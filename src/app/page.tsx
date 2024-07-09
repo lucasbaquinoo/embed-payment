@@ -8,21 +8,21 @@ function EmbedWithScript() {
   const cartItems = [
     {
       id: 1,
-      image: "/placeholder.svg",
+      image: "/chair.jpg",
       title: "Cozy Blanket",
       quantity: 2,
       price: 29.99,
     },
     {
       id: 2,
-      image: "/placeholder.svg",
+      image: "/chair.jpg",
       title: "Autumn Mug",
       quantity: 1,
       price: 12.99,
     },
     {
       id: 3,
-      image: "/placeholder.svg",
+      image: "/chair.jpg",
       title: "Fall Fragrance Candle",
       quantity: 1,
       price: 16.99,
@@ -42,11 +42,12 @@ function EmbedWithScript() {
             className="grid grid-cols-[100px_1fr_100px] items-center gap-4"
           >
             <Image
-              src="https://generated.vusercontent.net/placeholder.svg"
+              src={item.image}
               alt={item.title}
               width={100}
               height={100}
-              className="rounded-lg object-cover"
+              priority
+              className="rounded-lg object-cover h-auto w-auto"
             />
             <div className="grid gap-1">
               <h3 className="font-semibold">{item.title}</h3>
@@ -78,7 +79,7 @@ function EmbedWithScript() {
           Pay with Crypto
         </a>
       </div>
-      <Script src="https://embed-payment.vercel.app/embed.js" />
+      <Script src="/embed.js" />
     </div>
   );
 }

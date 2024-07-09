@@ -27,8 +27,7 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: Request) {
-  const url = new URL(request.url);
-  const searchParams = new URLSearchParams(url.search);
+  const searchParams = new URLSearchParams(request.url);
 
   const id = searchParams.get("id");
 

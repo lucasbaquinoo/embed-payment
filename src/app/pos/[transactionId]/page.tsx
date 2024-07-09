@@ -20,7 +20,9 @@ import Image from "next/image";
 import React from "react";
 
 async function fetchTransaction(id: string) {
-  const res = await fetch("/api/invoice?id=" + id);
+  const res = await fetch(
+    process.env.__NEXT_PRIVATE_ORIGIN + "/api/invoice?id=" + id
+  );
   if (!res.ok) return undefined;
   return res.json();
 }
@@ -66,11 +68,12 @@ async function POS({ params }: { params: { transactionId: string } }) {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="https://generated.vusercontent.net/placeholder.svg"
+              src="/qr-code.png"
               alt="QR Code"
               width={160}
               height={160}
-              className="rounded-md"
+              priority
+              className="h-auto w-auto rounded-md"
             />
             <p className="text-muted-foreground">Scan to Pay</p>
           </div>
