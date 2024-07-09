@@ -78,7 +78,7 @@ function EmbedWithScript() {
           Pay with Crypto
         </a>
       </div>
-      <Script src="http://localhost:3000/embed.js" />
+      <Script src="/embed.js" />
     </div>
   );
 }

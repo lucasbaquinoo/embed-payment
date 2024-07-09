@@ -33,8 +33,12 @@ export async function GET(request: Request) {
   const id = searchParams.get("id");
 
   if (!id) {
-    return Response.json({ message: "Not found" }, { status: 404 });
+    return Response.json({ message: "Not found" });
   }
   const transaction = transactions.find((transaction) => transaction.id === parseInt(id));
+  if (!transaction) {
+    return Response.json({ message: "Not found" });
+  }
+
   return Response.json(transaction);
 }

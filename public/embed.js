@@ -4,7 +4,7 @@ document.getElementById('conditionalLink').addEventListener('click', function (e
   var amount = event.target.dataset.amount;
 
   // URL of the service you want to call
-  var serviceUrl = 'http://localhost:3000/api/invoice';
+  var serviceUrl = '/api/invoice';
 
   // Send a request to the service
   fetch(serviceUrl, {
@@ -12,7 +12,6 @@ document.getElementById('conditionalLink').addEventListener('click', function (e
     headers: {
       'Content-Type': 'application/json'
     },
-    cache: 'no-cache',
     body: JSON.stringify({ amount: amount }) // Send the amount in the request body
   })
     .then(response => {
