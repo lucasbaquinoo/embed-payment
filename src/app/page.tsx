@@ -78,7 +78,7 @@ function EmbedWithScript() {
           Pay with Crypto
         </a>
       </div>
-      <Script src="/embed.js" />
+      <Script src="https://embed-payment.vercel.app/embed.js" />
     </div>
   );
 }
