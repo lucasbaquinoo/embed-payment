@@ -20,7 +20,7 @@ import Image from "next/image";
 import React from "react";
 
 async function fetchTransaction(id: string) {
-  const res = await fetch("http://localhost:3000/api/invoice?id=" + id);
+  const res = await fetch("/api/invoice?id=" + id);
   if (!res.ok) return undefined;
   return res.json();
 }
